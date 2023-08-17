@@ -1,5 +1,5 @@
 # healthcare
 
-### Projeto de estudos com Java e banco de dados Postrgres
+### Projeto de estudos com Java e banco de dados postgresql.
 
 ### 
