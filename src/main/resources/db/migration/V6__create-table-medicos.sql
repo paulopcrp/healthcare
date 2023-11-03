@@ -10,5 +10,7 @@ CREATE TABLE medicos (
     complemento VARCHAR(100),
     numero VARCHAR(20),
     uf CHAR(2) NOT NULL,
-    cidade VARCHAR(100) NOT NULL
+    cidade VARCHAR(100) NOT NULL,
+    telefone varchar(20) not null,
+    ativo boolean
 );
