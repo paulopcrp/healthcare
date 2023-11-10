@@ -1,10 +1,8 @@
-package com.github.paulopcrp.healthcare.api.medico;
+package com.github.paulopcrp.healthcare.api.domain.medico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
 
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
 

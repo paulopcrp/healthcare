@@ -1,7 +1,6 @@
-package com.github.paulopcrp.healthcare.api.paciente;
+package com.github.paulopcrp.healthcare.api.domain.paciente;
 
-import com.github.paulopcrp.healthcare.api.endereco.Endereco;
-import com.github.paulopcrp.healthcare.api.medico.DadosDetalhamentoMedico;
+import com.github.paulopcrp.healthcare.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoPaciente(String nome, String email, String telefone, String cpf, Endereco endereco) {
 

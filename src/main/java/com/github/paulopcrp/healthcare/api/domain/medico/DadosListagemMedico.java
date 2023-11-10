@@ -1,4 +1,4 @@
-package com.github.paulopcrp.healthcare.api.medico;
+package com.github.paulopcrp.healthcare.api.domain.medico;
 
 public record DadosListagemMedico(Long id, String nome, String email, String crm, Especialidade especialidade, String telefone) {
 

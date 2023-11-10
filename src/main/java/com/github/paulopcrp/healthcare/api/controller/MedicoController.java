@@ -1,6 +1,9 @@
 package com.github.paulopcrp.healthcare.api.controller;
 
-import com.github.paulopcrp.healthcare.api.medico.*;
+import com.github.paulopcrp.healthcare.api.domain.medico.DadosListagemMedico;
+import com.github.paulopcrp.healthcare.api.domain.medico.Medico;
+import com.github.paulopcrp.healthcare.api.domain.medico.MedicoRepository;
+import com.github.paulopcrp.healthcare.api.domain.medico.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,8 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/medicos")

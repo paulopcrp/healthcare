@@ -1,6 +1,6 @@
-package com.github.paulopcrp.healthcare.api.medico;
+package com.github.paulopcrp.healthcare.api.domain.medico;
 
-import com.github.paulopcrp.healthcare.api.endereco.Endereco;
+import com.github.paulopcrp.healthcare.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;

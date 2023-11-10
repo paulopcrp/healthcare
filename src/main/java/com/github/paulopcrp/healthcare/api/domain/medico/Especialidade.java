@@ -1,4 +1,4 @@
-package com.github.paulopcrp.healthcare.api.medico;
+package com.github.paulopcrp.healthcare.api.domain.medico;
 
 public enum Especialidade {
 

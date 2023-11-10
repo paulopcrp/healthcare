@@ -1,4 +1,4 @@
-package com.github.paulopcrp.healthcare.api.paciente;
+package com.github.paulopcrp.healthcare.api.domain.paciente;
 
 public record DadosListagemPaciente(Long id, String nome, String email, String cpf) {
     public DadosListagemPaciente(Paciente paciente) {

@@ -1,4 +1,4 @@
-package com.github.paulopcrp.healthcare.api.endereco;
+package com.github.paulopcrp.healthcare.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

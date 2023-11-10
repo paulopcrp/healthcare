@@ -1,7 +1,9 @@
 package com.github.paulopcrp.healthcare.api.controller;
 
-import com.github.paulopcrp.healthcare.api.medico.DadosAtualizarMedico;
-import com.github.paulopcrp.healthcare.api.paciente.*;
+import com.github.paulopcrp.healthcare.api.domain.paciente.DadosListagemPaciente;
+import com.github.paulopcrp.healthcare.api.domain.paciente.Paciente;
+import com.github.paulopcrp.healthcare.api.domain.paciente.PacienteRepository;
+import com.github.paulopcrp.healthcare.api.domain.paciente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

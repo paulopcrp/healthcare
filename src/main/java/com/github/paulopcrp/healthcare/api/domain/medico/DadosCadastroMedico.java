@@ -1,6 +1,6 @@
-package com.github.paulopcrp.healthcare.api.medico;
+package com.github.paulopcrp.healthcare.api.domain.medico;
 
-import com.github.paulopcrp.healthcare.api.endereco.DadosEndereco;
+import com.github.paulopcrp.healthcare.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
