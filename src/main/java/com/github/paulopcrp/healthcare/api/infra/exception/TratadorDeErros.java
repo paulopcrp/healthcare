@@ -1,4 +1,4 @@
-package com.github.paulopcrp.healthcare.api.infra;
+package com.github.paulopcrp.healthcare.api.infra.exception;
 
 
 import jakarta.persistence.EntityNotFoundException;
