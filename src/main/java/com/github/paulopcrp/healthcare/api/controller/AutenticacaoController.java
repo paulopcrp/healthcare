@@ -2,6 +2,7 @@ package com.github.paulopcrp.healthcare.api.controller;
 
 import com.github.paulopcrp.healthcare.api.domain.usuario.DadosAutenticacao;
 import com.github.paulopcrp.healthcare.api.domain.usuario.Usuario;
+import com.github.paulopcrp.healthcare.api.infra.security.DadosTokenJWT;
 import com.github.paulopcrp.healthcare.api.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,11 @@ public class AutenticacaoController {
         var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication =  manager.authenticate(token);
 
-        return ResponseEntity.ok(tokenService.gerarToken((Usuario) authentication.getPrincipal()));
+        var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+
+        return ResponseEntity.ok(new DadosTokenJWT(tokenJWT));
+
+        //return ResponseEntity.ok(tokenService.gerarToken((Usuario) authentication.getPrincipal()));
 
     }
 }

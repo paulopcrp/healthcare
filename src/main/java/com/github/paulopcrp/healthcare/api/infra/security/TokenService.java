@@ -3,6 +3,7 @@ package com.github.paulopcrp.healthcare.api.infra.security;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.github.paulopcrp.healthcare.api.domain.usuario.Usuario;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.Date;
 
 @Service
 public class TokenService {
@@ -25,7 +25,6 @@ public class TokenService {
             return JWT.create()
                     .withIssuer("API HealthCare")
                     .withSubject(usuario.getLogin())
-                    .withClaim("id", usuario.getLogin())
                     .withExpiresAt(dataExpeiracao())
                     .sign(algoritmo);
         } catch (JWTCreationException exception){
@@ -33,7 +32,26 @@ public class TokenService {
         }
     }
 
+    public String getSubject(String tokenJWT) {
+        System.out.println("Recebeu token: " + tokenJWT);
+
+        try {
+            var algoritmo = Algorithm.HMAC256(secret);
+            return JWT.require(algoritmo)
+                    .withIssuer("API HealthCare")
+                    .build()
+                    .verify(tokenJWT)
+                    .getSubject();
+
+        } catch (JWTVerificationException exception){
+            throw new RuntimeException("Token JWT inválido ou expirado!");
+        }
+
+    }
+
+
     private Instant dataExpeiracao() {
+
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00:00"));
     }
 }
