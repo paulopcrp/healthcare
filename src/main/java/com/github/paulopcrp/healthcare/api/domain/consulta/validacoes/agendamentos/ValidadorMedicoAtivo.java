@@ -1,12 +1,16 @@
-package com.github.paulopcrp.healthcare.api.domain.consulta.validacoes;
+package com.github.paulopcrp.healthcare.api.domain.consulta.validacoes.agendamentos;
 
 
 import com.github.paulopcrp.healthcare.api.domain.ValidacaoException;
 import com.github.paulopcrp.healthcare.api.domain.consulta.DadosAgendamentoConsulta;
 import com.github.paulopcrp.healthcare.api.domain.medico.MedicoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class ValidadorMedicoAtivo {
+@Component
+public class ValidadorMedicoAtivo implements ValidadorAgendamentoDeConsulta{
 
+    @Autowired
     private MedicoRepository repository;
 
     public void validar(DadosAgendamentoConsulta dados) {

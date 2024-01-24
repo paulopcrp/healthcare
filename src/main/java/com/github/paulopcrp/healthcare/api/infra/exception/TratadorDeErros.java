@@ -1,6 +1,7 @@
 package com.github.paulopcrp.healthcare.api.infra.exception;
 
 
+import com.github.paulopcrp.healthcare.api.domain.ValidacaoException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -22,6 +23,12 @@ public class TratadorDeErros {
         var erros = exception.getFieldErrors();
 
         return ResponseEntity.badRequest().body(erros.stream().map(DadosValidacao::new).toList());
+
+    }
+
+    @ExceptionHandler(ValidacaoException.class)
+    public ResponseEntity tratarErroRegradeNegocio(ValidacaoException exception) {
+        return ResponseEntity.badRequest().body(exception.getMessage());
 
     }
 
