@@ -4,6 +4,7 @@ import com.github.paulopcrp.healthcare.api.domain.paciente.DadosListagemPaciente
 import com.github.paulopcrp.healthcare.api.domain.paciente.Paciente;
 import com.github.paulopcrp.healthcare.api.domain.paciente.PacienteRepository;
 import com.github.paulopcrp.healthcare.api.domain.paciente.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired
